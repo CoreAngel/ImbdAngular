@@ -1,0 +1,13 @@
+<div class="search">
+  <h1 class="search__title">Wyszukaj Film</h1>
+  <input (input)="onChange($event)" class="search__input" type="search">
+  <ul class="search__list">
+    <li class="search__item" *ngFor="let result of searchResult" routerLink="/movie/{{result.imdbID}}">
+      <img class="item__img" src="{{checkPoster(result.Poster)}}" alt="">
+      <div class="item__container">
+        <a class="item__title">{{result.Title}} ({{result.Year}})</a>
+        <p class="item__type">Type: {{result.Type}}</p>
+      </div>
+    </li>
+  </ul>
+</div>

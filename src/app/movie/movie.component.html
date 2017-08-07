@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="movie" *ngIf="movieResult">
+    <div class="movie__poster">
+      <img class="movie__img" src="{{movieResult.Poster}}" alt="">
+    </div>
+    <div class="movie__container">
+      <h1 class="movie__title">{{movieResult.Title}} ({{movieResult.Year}})</h1>
+      <p class="movie__data">Type: {{movieResult.Type}} | Time: {{movieResult.Runtime}}</p>
+      <p class="movie__genre">Genre: {{movieResult.Genre}}</p>
+      <p class="movie__desc" *ngIf="movieResult.Plot !== '-'">{{movieResult.Plot}}</p>
+      <p class="movie__director">Directors: {{movieResult.Director}}</p>
+      <p class="movie__actors">Actors: {{movieResult.Actors}}</p>
+      <p class="movie__rate">Rate: {{movieResult.imdbRating}} <span>({{movieResult.imdbVotes}})</span></p>
+
+      <div class="movie__video" *ngIf="videoSrc">
+        <iframe class="movie__iframe" type="text/html" [src]='videoSrc' frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <a class="movie__button" href="http://www.imdb.com/title/{{movieResult.imdbID}}">Zobacz szczegóły</a>
+    </div>
+  </div>
+
+
+  <img *ngIf="!movieResult" class="movie__loading" src="assets/loading.gif">
+</div>
