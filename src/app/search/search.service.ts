@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http'
 
-import { imbdApiKey } from './../imbdApiKey';
+import { imbdApiKey, imbdLink } from '../imbdApi';
 
 @Injectable()
 export class SearchService {
 
-  private url: string = 'http://www.omdbapi.com/';
+  private url: string = imbdLink;
   private paramsData = {
     apikey: imbdApiKey,
     r: 'json',

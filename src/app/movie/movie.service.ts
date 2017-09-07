@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
-import { imbdApiKey } from './../imbdApiKey';
+import { imbdApiKey, imbdLink } from '../imbdApi';
 
 @Injectable()
 export class MovieService {
   constructor(private http: Http) {}
 
   public imdbID: string;
-  private url: string = 'http://www.omdbapi.com/';
+  private url: string = imbdLink;
   private paramsData = {
     params: {
       apikey: imbdApiKey,
