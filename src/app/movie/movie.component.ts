@@ -34,7 +34,7 @@ export class MovieComponent implements OnInit {
       this.movie.getVideo(this.movieResult.Title, this.movieResult.Year).subscribe(e => {
         if(e.status === 200) {
           let rawData = JSON.parse(e['_body']);
-          let videoSrc = "http://www.youtube.com/embed/" + rawData.items[0].id.videoId;
+          let videoSrc = "https://www.youtube.com/embed/" + rawData.items[0].id.videoId;
           this.videoSrc = this.sanitizer.bypassSecurityTrustResourceUrl(videoSrc);
         }
       });
